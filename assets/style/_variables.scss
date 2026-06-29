@@ -1,0 +1,61 @@
+:root {
+  /* ====== Core Brand Colors ====== */
+  /* Màu chủ đạo (brand color) */
+  --color-primary: #0028AC;
+  /* Màu chữ/icon trên nền primary */
+  --color-primary-foreground: #ffffff;
+  /* Màu phụ (accent) */
+  --color-secondary: #7BB303;
+  /* Màu chữ/icon trên nền secondary */
+  --color-secondary-foreground: #ffffff;
+
+  /* Màu liên kết (anchor) */
+  --color-anchor: #f7f2d3;
+  /* Màu chữ/icon trên nền anchor */
+  --color-anchor-foreground: #000000;
+
+  /* ====== Neutral & Base Colors ====== */
+  /* Màu nền chính của trang */
+  --color-background: #ffffff;
+  /* Màu chữ chính trên nền background */
+  --color-foreground: #000000;
+
+  /* Màu nền phụ (card, section, block) */
+  --color-surface: #f7f2d3;
+  /* Màu chữ/icon trên surface */
+  --color-surface-foreground: #000000;
+
+  /* ====== Text Variants ====== */
+  /* Chữ chính */
+  --color-text-primary: #000000;
+  /* Chữ phụ hoặc mô tả */
+  --color-text-secondary: #ffffff;
+  /* Chữ mờ (placeholder, label nhạt) */
+  --color-text-muted: #888888;
+  /* Chữ blog (disabled) */
+  --color-text-blog: #000000;
+  /* Chữ blog phụ */
+  --color-text-blog-secondary: #555555;
+
+  /* ====== Borders & Dividers ====== */
+  /* Viền nhẹ */
+  --color-border: #e5e5e5;
+  /* Viền đậm hơn */
+  --color-border-strong: #cccccc;
+
+  /* ====== Status / Feedback ====== */
+  /* Thành công (xanh lá) */
+  --color-success: #22c55e;
+  /* Màu chữ/icon trên nền success */
+  --color-success-foreground: #ffffff;
+
+  /* Cảnh báo (vàng) */
+  --color-warning: #facc15;
+  /* Màu chữ/icon trên nền warning */
+  --color-warning-foreground: #000000;
+
+  /* Lỗi (đỏ) */
+  --color-danger: #ef4444;
+  /* Màu chữ/icon trên nền danger */
+  --color-danger-foreground: #ffffff;
+}

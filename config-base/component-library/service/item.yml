@@ -1,0 +1,89 @@
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - content_blocks
+  label: Service Item Section
+  description: Service Item Section
+  icon: 'cottage'
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  status: true
+  background_color: '#FFFFFF'
+  background_image:
+  is_reverse: false
+  is_hot: true
+  is_show_switch_price: false
+  image: /images/service5.jpeg
+  image_alt: Alt Img
+  title: Manicure
+  description_simple: This is this description
+  list_service:
+    - label: Full Set
+      price: $50
+      description_simple: This is this description
+  second_cat:
+    - title: REFILL
+      description_simple:
+      list_service:
+        - label: PINK FILL IN
+          price: $25
+          description_simple:
+      third_cat:
+        - title: REFILL last
+          description_simple:
+          list_service:
+            - label: PINK FILL IN LAST
+              price: $45
+              description_simple:
+  # If section need filter custom
+  extend:
+    image_deco: ''
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:
+  status:
+    type: toggle
+    label: Active Section
+  is_hot:
+    type: toggle
+    label: Hot Service (Toggle this button to highlight this service on the homepage.)
+  image:
+    type: image
+    label: Image
+  image_alt:
+    type: text
+    label: Image alt
+  background_color:
+    type: color
+    label: Background Color
+  title:
+    type: text
+    label: Title of Section
+  list_service[*].label:
+    type: text
+    label: Label
+  list_service[*].price:
+    type: text
+    label: Price
+  second_cat[*].title:
+    type: text
+    label: Title Second Category
+  second_cat[*].list_service.[*].label:
+    type: text
+    label: Label
+  second_cat[*].list_service.[*].price:
+    type: text
+    label: Price
+  second_cat[*].third_cat[*].title:
+    type: text
+    label: Title Third Category
+  second_cat[*].third_cat[*].list_service[*].label:
+    type: text
+    label: Label
+  second_cat[*].third_cat[*].list_service[*].price:
+    type: text
+    label: Price

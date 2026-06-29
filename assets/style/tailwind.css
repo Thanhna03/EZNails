@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-4xl font-extrabold leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl font-bold leading-snug;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold leading-normal;
+  }
+
+  h4 {
+    @apply text-xl font-semibold leading-normal;
+  }
+
+  h5 {
+    @apply text-lg font-semibold leading-normal;
+  }
+
+  h6 {
+    @apply text-base font-semibold leading-normal;
+  }
+
+  p {
+    @apply text-base leading-7;
+  }
+
+}
+
+@layer components {
+  .title-breadcrumb {
+    @apply text-6xl font-anchor font-normal
+  }
+  .title-section {
+    @apply font-primary font-semibold text-4xl 
+  }
+  .description-section {
+    @apply font-primary font-extralight text-lg
+  }
+  .flex-center {
+    @apply flex justify-center items-center
+  }
+  .image{
+    @apply w-full h-full object-cover object-center
+  }
+  .margin-y-section {
+    @apply lg:my-20 md:my-16 sm:my-12 my-8
+  }
+  .margin-t-section {
+    @apply lg:mt-20 md:mt-16 sm:mt-12 mt-8
+  }
+  .margin-b-section {
+    @apply lg:mb-20 md:mb-16 sm:mb-12 mb-8
+  }
+  .padding-y-section {
+    @apply lg:py-20 md:py-16 sm:py-12 py-8
+  }
+  .padding-t-section {
+    @apply lg:pt-20 md:pt-16 sm:pt-12 pt-8
+  }
+  .padding-b-section {
+    @apply lg:pb-20 md:pb-16 sm:pb-12 pb-8
+  }
+}
+
+@layer utilities {}

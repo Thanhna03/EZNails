@@ -1,0 +1,13 @@
+# AI Agent Rules
+
+## Project Structure
+- This project follows a Nuxt 3 structure.
+- Agent Skills and Workflows are located in `.agent/`.
+
+## Key Skills
+- **Clone Section**: See `.agent/clone-section/SKILL.md`.
+- **Agent Skills**: See `.agent/agent-skills/SKILL.md`.
+
+## Coding Standards
+- Use Vue 3 Composition API with `<script setup>`.
+- Use Tailwind CSS for styling.

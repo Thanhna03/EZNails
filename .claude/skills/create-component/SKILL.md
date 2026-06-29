@@ -1,0 +1,257 @@
+---
+name: create-component
+description: Create or clone a new section/component in this Nuxt 3 base template while enforcing every rule in CLAUDE.md. Use whenever the user asks to add, create, clone, or scaffold a section, block, or component.
+---
+
+# Create Component Skill
+
+This skill is the authoritative, step-by-step workflow for adding a **new section/component** to this Nuxt 3 template. It encodes every mandatory rule from `CLAUDE.md`. Follow it exactly. Do not introduce tokens, fonts, or classes from other templates — `tailwind.config.ts`, `assets/style/_variables.scss`, and `assets/style/tailwind.css` are the source of truth.
+
+> **Usage example (prompt):** "Create a new section called 'Section Promo' based on the default section, index it into the about page @[content/about.yml]"
+
+---
+
+## When to use
+
+Trigger this skill whenever the user wants to **add / create / clone / scaffold** any section, block, or component (e.g. "make a new section", "clone the default section", "add a banner block").
+
+---
+
+## The 3-file rule (every new section needs all three)
+
+1. **Vue component** — `components/<category>/<Name>.vue`
+2. **Content YAML** — a new block entry inside the relevant `content/*.yml`
+3. **CMS definition** — `component-library/components/<category>/<name>.yml` (`spec`, `blueprint`, `_inputs`)
+
+Reference implementation: [SectionDefault.vue](../../../components/section/SectionDefault.vue) + [default.yml](../../../component-library/components/section/default.yml). Defaults must align with [config-base/.../example.yml](../../../config-base/component-library/section/example.yml).
+
+---
+
+## Naming rule (Rule 3 — component name is exactly two words)
+
+- `_block_name` is always two levels: `category/kebab-name`.
+- It resolves to `components/<Category>/<Category><PascalName>.vue`.
+- Example: `section/default` → `SectionDefault.vue`. `about/why` → `components/about/AboutWhy.vue`.
+- **Never** use three-word names like `SectionHomeContact`.
+
+---
+
+## Vue component template (copy & adapt)
+
+Based on [SectionDefault.vue](../../../components/section/SectionDefault.vue). It already bakes in Rules 4, 8, 9, 10, 11.
+
+```vue
+<template>
+  <!-- Rule: section toggles via block.status -->
+  <section
+    v-if="block.status"
+    :data-cms-bind="dataBinding"
+    class="padding-y-section"
+    :style="backgroundComputed"
+  >
+    <div class="container">
+      <!-- Rule 10: never H1. Use typography utility classes on a div/h2 -->
+      <div v-if="block.title" class="title-section ckeditor-custom" v-html="block.title" />
+
+      <!-- Rule 9: rich text => div + ckeditor-custom + v-html -->
+      <div v-if="block.description" class="description-section ckeditor-custom" v-html="block.description" />
+
+      <!-- Rule 11: image always guarded with v-if -->
+      <img v-if="block.image" :src="block.image" :alt="block.image_alt" class="image" />
+
+      <!-- Rule 8: standard button object, rendered behind is_show, using BaseButton -->
+      <div v-if="block.button.is_show" class="mt-4">
+        <BaseButton
+          :url="block.button.url"
+          :is-target-blank="block.button.open_new_tab"
+          :text="block.button.text"
+        />
+      </div>
+    </div>
+  </section>
+</template>
+
+<script lang="ts" setup>
+// Rule: props pattern is always { dataBinding, block }
+interface Props {
+  dataBinding: any;
+  block: any;
+}
+const props = defineProps<Props>();
+
+// Rule 4: every section must compute background (image preferred, color fallback)
+const backgroundComputed = computed(() =>
+  props.block.background_image
+    ? { background: `url(${props.block.background_image}) center / cover` }
+    : { backgroundColor: props.block.background_color }
+);
+</script>
+```
+
+---
+
+## Styling — token-first + reuse rules (critical)
+
+**Before writing ANY CSS value, check what already exists and REUSE it.** Follow this order:
+
+1. **Tailwind utility class** — check `tailwind.config.ts` + `assets/style/tailwind.css`. This includes project utility classes already provided: `.title-breadcrumb`, `.title-section`, `.subtitle-section`, `.description-section`, `.flex-center`, `.image`, `.margin-y-section` / `.margin-t-section` / `.margin-b-section`, `.padding-y-section` / `.padding-t-section` / `.padding-b-section`. **If a suitable class exists, reuse it.**
+2. **CSS variable** — if no class fits, check `assets/style/_variables.scss` for an existing token and reuse it.
+3. **Only if neither exists** — add a **new variable with a semantic (role-based) name** to `_variables.scss`, then consume it via Tailwind or `var()`.
+4. **Never** hardcode hex colors or arbitrary values (`[48px]`, `[#fff]`). **Never duplicate** a class or variable that already exists — always reuse.
+
+**Tailwind only — never raw CSS.** Style every component with Tailwind utilities + the project's existing utility classes. **Do not** write raw CSS properties in a `<style scoped>` block. If a class string gets long or is repeated across components, extract it into a class in `assets/style/tailwind.css` using **`@apply`** — every project utility class is built this way (e.g. `.title-section { @apply font-semibold text-4xl; }`). Plain CSS declarations are reserved for things Tailwind genuinely can't express (e.g. complex keyframes/pseudo-element effects), not for spacing/colors/typography.
+
+**Color tokens** (Tailwind class → CSS variable). Hex values are theme-generated by `pnpm generate`; never hardcode hex in components:
+
+| Tailwind class | CSS variable |
+|---|---|
+| `bg-main` / `text-main` | `--color-primary` |
+| `*-main-foreground` | `--color-primary-foreground` |
+| `bg-secondary` / `text-secondary` | `--color-secondary` |
+| `*-secondary-foreground` | `--color-secondary-foreground` |
+| `bg-anchor` / `text-anchor-foreground` | `--color-anchor` / `--color-anchor-foreground` |
+| `bg-background` / `text-foreground` | `--color-background` / `--color-foreground` |
+| `bg-surface` / `text-surface-foreground` | `--color-surface` / `--color-surface-foreground` |
+| `text-text-main` / `text-text-secondary` / `text-text-muted` | `--color-text-primary` / `--color-text-secondary` / `--color-text-muted` |
+| `text-text-blog` / `text-text-blog-secondary` | `--color-text-blog` / `--color-text-blog-secondary` |
+| `border-border` / `border-border-strong` | `--color-border` / `--color-border-strong` |
+| `bg-success` / `bg-warning` / `bg-danger` (+ `-foreground`) | `--color-success` / `--color-warning` / `--color-danger` |
+
+**Fonts (Rule 2 — name by role, not by typeface):** `font-primary` (Inter), `font-secondary` (Kapakana), `font-anchor` (Inclusive Sans). Any new font must be added with a semantic role name. Container width = 1168px.
+
+**CSS variable opacity** — never use `/` opacity with CSS-var colors. Use `color-mix()`:
+
+```css
+/* ✅ correct */ background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+/* ❌ wrong    */ @apply bg-main/10;
+```
+
+---
+
+## Global business data (Rule 1)
+
+Address / Phone / Email / Business hours / Social must be read from `data/setting.json` via the language store. **Never add new keys to `setting.json`** — use only existing keys.
+
+```ts
+import setting from '@/data/setting.json'
+const languageStore = useLanguageStore()
+const settingData = computed(() => languageStore.getLocalizedData(setting))
+// settingData.value.address / .business / .phone / .email
+```
+
+See [MainFooter.vue](../../../components/main/MainFooter.vue) for a usage example. `data/header.json` / `data/footer.json` are localized the same way.
+
+---
+
+## Store-driven sections (Rules 5 & 6)
+
+Service / Coupon / Gallery sections must read content from the **Pinia store** (do not fetch independently). These stores are populated in `app.vue` and react to language change:
+
+- `useGalleryStore.getGalleryItems` ← block `gallery/hero` → `gallery[].item` (filter `is_hot`)
+- `useServicesStore.getServicesItems` ← block `service/item` (filter `status` + `is_hot`)
+- `useCouponStore.getCouponItems` ← block `coupon/hero` → `list_item` (filter `is_hot`)
+
+**Preserve the content keys** of `gallery/hero`, `service/item`, `coupon/hero` — never rename or repurpose them. New fields go inside `extend` only.
+
+---
+
+## Special section: `contact/hero` (Rule 7)
+
+`ContactHero.vue` is special — preserve its structure and logic:
+
+- **Never change the key structure of `list_fields`.** Each item must keep: `fields` (`text`/`email`/`tel`/`textarea`/`file`), `status_error`, `error`, `label`, `is_show`, `placeholder`, `width_fields` (`full`/`1/2`). The form logic reads these by index.
+- Preserve `title`, `sub_title`, `title_form`, `color_input_form`, `image`/`image_alt`, and the `button` object.
+- Keep form logic intact (validation, file upload/delete via API, popups, 15MB limit).
+- New fields go in `extend` — never inserted into `list_fields`.
+
+---
+
+## The `extend` object (Rule 5)
+
+Any custom / irregular field that does not fit the standard spec must be grouped inside `extend:` — never renamed onto existing keys.
+
+```yaml
+extend:
+  image_deco: ''
+```
+
+In `_inputs`: `extend.image_deco: { type: image, label: Image Decoration }`.
+
+---
+
+## Content YAML block entry
+
+Add a block to the relevant `content/*.yml`. The `button` object must include the standard fields (Rule 8):
+
+```yaml
+- _block_name: section/promo
+  status: true
+  background_color: "#FFFFFF"
+  background_image: ""
+  title: Title section
+  description: Description section
+  image: /images/aboutpage.jpeg
+  image_alt: Image alt
+  button:
+    is_show: true
+    url: /coupons
+    text: View more
+    open_new_tab: false
+```
+
+Every section block **must have** both `background_image` and `background_color` (Rule 4).
+
+---
+
+## CMS definition (`_inputs`)
+
+Create `component-library/components/<category>/<name>.yml` with `spec`, `blueprint`, `_inputs`. Mirror [default.yml](../../../component-library/components/section/default.yml). Base fields must align with [config-base/.../example.yml](../../../config-base/component-library/section/example.yml). Use the standard `list_item` for arrays (not custom names like `features`).
+
+| Field type | `_inputs` type |
+|---|---|
+| Plain text | `text` |
+| Long text / `v-html` (Markdown) | `markdown` or `markdown_simple` |
+| Non-HTML textarea | `textarea` |
+| Boolean | `toggle` |
+| File path | `image` |
+| Hex color | `color` |
+| Fixed options | `select` |
+
+**Rule:** any field rendered via `v-html` (`ckeditor-custom`) MUST use `markdown` / `markdown_simple` input type.
+
+**Nested arrays** use the `[*]` wildcard: `list_item[*].title`, `outer[*].inner[*].field`. See [service/item.yml](../../../component-library/components/service/item.yml) for deep nesting. Shared `_inputs` (status, layout, seo.*, button.*, is_hot, sort) live in `component-library/index.yml`.
+
+---
+
+## Pre-completion checklist (verify ALL before reporting done)
+
+- [ ] **3-file rule**: Vue component, content YAML block entry, and CMS `_inputs` definition all created.
+- [ ] **Rule 1**: shop info (address/phone/email/hours) read from `data/setting.json` via `getLocalizedData()`; no new keys added.
+- [ ] **Rule 2**: any new font added by semantic role name (`primary`/`secondary`/`anchor`), not typeface name.
+- [ ] **Rule 3**: component name is exactly two words from `category/kebab-name`.
+- [ ] **Rule 4**: block has both `background_image` + `background_color`, and `backgroundComputed` is implemented.
+- [ ] **Rule 5**: key sections' (`gallery/hero`, `service/item`, `coupon/hero`) keys unchanged; new fields only in `extend`.
+- [ ] **Rule 6**: service/coupon/gallery content read from the Pinia store, not fetched independently.
+- [ ] **Rule 7**: `contact/hero` `list_fields` structure & form logic preserved (if touched).
+- [ ] **Rule 8**: `button` object has `is_show`/`url`/`text`/`open_new_tab` and renders behind `v-if="block.button.is_show"` via `BaseButton`.
+- [ ] **Rule 9**: all rich text uses `<div class="ckeditor-custom" v-html="..." />`; matching `_inputs` are `markdown`/`markdown_simple`.
+- [ ] **Rule 10**: no `H1` — use `H2`+ or typography classes (`.title-section`, `.title-breadcrumb`).
+- [ ] **Rule 11**: every `<img>` guarded with `v-if`.
+- [ ] **Token-first + reuse**: checked existing utility class / CSS variable and reused it instead of creating new; no hardcoded hex or arbitrary values; `color-mix()` used for var opacity.
+- [ ] **Props pattern**: `{ dataBinding: any; block: any }` and `:data-cms-bind="dataBinding"` on the section.
+- [ ] **CMS align**: defaults align with `config-base/.../example.yml`; nested arrays use `[*]`.
+
+---
+
+## Reference files
+
+| File | Purpose |
+|---|---|
+| [components/section/SectionDefault.vue](../../../components/section/SectionDefault.vue) | Canonical component pattern |
+| [component-library/components/section/default.yml](../../../component-library/components/section/default.yml) | Canonical `spec`/`blueprint`/`_inputs` |
+| [config-base/component-library/section/example.yml](../../../config-base/component-library/section/example.yml) | Default field set to align against |
+| [components/base/BaseButton.vue](../../../components/base/BaseButton.vue) | CTA button |
+| [components/main/MainFooter.vue](../../../components/main/MainFooter.vue) | `setting.json` usage example |
+| [component-library/components/service/item.yml](../../../component-library/components/service/item.yml) | Deep nested `[*]` example |
+| `component-library/index.yml` | CMS collections + shared `_inputs` |
+| `assets/style/_variables.scss` / `tailwind.css` / `tailwind.config.ts` | Authoritative design tokens |

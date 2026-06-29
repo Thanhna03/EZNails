@@ -1,0 +1,31 @@
+title: About
+seo:
+  page_description:
+  canonical_url:
+  featured_image:
+  featured_image_alt:
+  author_twitter_handle:
+  open_graph_type:
+  no_index: false
+  
+content_blocks:
+  
+  - _block_name: section/breadcrumbs
+    status: true
+    title: About us
+    background_image: 
+    
+
+  - _block_name: about/hero
+    status: true
+    background_color: '#ffffff'
+    background_image: 
+    title: Welcome to
+    sub_title: Deluxe Nails & Spa
+    image: /images/aboutpage.jpeg
+    image_alt: Deluxe Nails & Spa Alt
+    description: >-
+      Dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+    extend:
+      image_decoration: /images/about-deco.png
+      

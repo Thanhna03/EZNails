@@ -1,0 +1,132 @@
+
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - content_blocks
+  label: Contact Hero Section
+  description: Contact Hero Section
+  icon: "cottage"
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  status: true
+  background_color: '#ffffff'
+  background_image: 
+  title: Welcome to
+  sub_title: Deluxe Nails & Spa
+  image: /images/aboutpage.jpeg
+  image_alt: Deluxe Nails & Spa Alt
+  title_form: Send us a message
+  color_input_form: '#000000'
+  button:
+    background_color: "#DB00C5"
+    color: "#ffffff"
+    border: 25
+    text_button: Send Us
+    variant: solid
+    width_button: 1/2
+    align_button: center
+  list_fields:
+    - fields: text
+      status_error: true
+      error: Please this is a required field.
+      label: Your name
+      is_show: true
+      placeholder: Name
+      width_fields: full
+  # If section need filter custom
+  extend:
+    image_deco: ''
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:
+  status:
+    type: toggle
+    label: Active Section
+  title: 
+    label: Title Section
+    type: markdown
+  sub_title: 
+    label: Sub Title Section
+    type: markdown
+  image: 
+    label: Image Section
+    type: image
+  image_alt: 
+    label: Image Alt Section
+    type: text
+  title_form: 
+    label: Title Form Section (The title is defined for every contact list.)
+    type: text
+  color_input_form: 
+    label: Color Input Text
+    type: color
+  list_fields[*].fields:
+    label: Type Fields
+    type: select
+    description:
+    options:
+      - text
+      - textarea
+      - email
+      - tel
+      - file
+  list_fields[*].error:
+    label: Text Required
+    type: text
+  list_fields[*].status_error:
+    label: Required
+    type: toggle
+  list_fields[*].label:
+    label: Label (Not allow empty field The form contact will not be sent.)
+    type: text
+  list_fields[*].is_show:
+    label: Show/hide name label input
+    type: toggle
+  list_fields[*].placeholder:
+    label: Placeholder
+    type: text
+  list_fields[*].width_fields:
+    label: Width Fields
+    type: select
+    options:
+      - full
+      - 1/2
+  button.text_button:
+    label: Button Text
+    type: text
+  button.background_color:
+    label: Background Color
+    type: color
+  button.color:
+    label: Text Color
+    type: color
+  button.border:
+    label: Border Radius
+    type: text
+  button.variant:
+    label: Variant Button
+    type: select
+    options:
+      - solid
+      - outline
+  button.width_button:
+    label: Width Button
+    type: select
+    options:
+      - auto
+      - 1/2
+      - 1/3
+      - 1/4
+      - full
+  button.align_button:
+    label: Align Button
+    type: select
+    options:
+      - left
+      - right
+      - center
+    

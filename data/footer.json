@@ -1,0 +1,107 @@
+{
+  "en": {
+    "logo": "/images/logo-footer.png",
+    "logo_alt": "Logo Alt",
+    "background_color": "#191919",
+    "copyright": "Top-notch nail salon in Torrance CA 90505 - Beauty Blog",
+    "social": {
+      "title": "Social"
+    },
+    "contact": "Contact information",
+    "button_phone": [
+      {
+        "is_show": false,
+        "image": "",
+        "link": "tel:832-968-6668",
+        "label": "832-968-6668",
+        "background_color": "#25D366",
+        "text_color": "#FFFFFF"
+      }
+    ],
+    "button_book": [
+      {
+        "is_show": false,
+        "open_new_tab": false,
+        "image": "",
+        "link": "",
+        "label": "Booking",
+        "background_color": "#0077B5",
+        "text_color": "#FFFFFF"
+      }
+    ],
+    "nav": {
+      "label": "Menu",
+      "icon": "/images/icons8-right-48.png",
+      "icon_alt": "Icon alt",
+      "menu": [
+        {
+          "link": "/",
+          "text": "Home",
+          "open_new_tab": false
+        },
+        {
+          "link": "/about",
+          "text": "About us",
+          "open_new_tab": false
+        },
+        {
+          "link": "/service",
+          "text": "Services",
+          "open_new_tab": false
+        },
+        {
+          "link": "/gallery",
+          "text": "Gallery",
+          "open_new_tab": false
+        },
+        {
+          "link": "https://booking.gocheckin.net/v2/10251",
+          "text": "Booking",
+          "open_new_tab": false
+        },
+        {
+          "link": "/contact",
+          "text": "Contact us",
+          "open_new_tab": false
+        }
+      ]
+    },
+    "button_to_top": {
+      "is_show": true
+    },
+    "_inputs": {
+      "logo": {
+        "type": "image",
+        "label": "Logo"
+      },
+      "logo_alt": {
+        "type": "text",
+        "label": "Logo alt"
+      },
+      "iframe_map": {
+        "type": "textarea",
+        "label": "Iframe map"
+      },
+      "copyright": {
+        "type": "markdown",
+        "label": "Copyright"
+      },
+      "social.title": {
+        "type": "text",
+        "label": "Social title"
+      },
+      "background_color": {
+        "type": "color",
+        "label": "Background color"
+      },
+      "button_phone[*].text_color": {
+        "type": "color",
+        "label": "Button phone text color"
+      },
+      "button_book[*].text_color": {
+        "type": "color",
+        "label": "Button book text color"
+      }
+    }
+  }
+}

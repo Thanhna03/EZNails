@@ -1,0 +1,34 @@
+{
+  "en": {
+    "background_color": "#2F234F",
+    "background_image": "",
+    "copyright": "© Copyright by T & T Nail Spa. All Rights Reserved.",
+    "extend": {},
+    "_inputs": {
+      
+      "logo": {
+        "type": "image",
+        "label": "Logo"
+      },
+      "logo_alt": {
+        "type": "text",
+        "label": "Logo alt"
+      },
+
+      "background_color": {
+        "type": "color",
+        "label": "Background color"
+      },
+      "background_image": {
+        "type": "image",
+        "label": "Background image"
+      },
+      
+      "copyright": {
+        "type": "markdown",
+        "label": "Copyright"
+      }
+      
+    }
+  }
+}

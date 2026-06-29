@@ -1,0 +1,145 @@
+{
+  "en": {
+    "logo": "/images/logo.png",
+    "logo_alt": "Logo",
+    "business_name": "Fastboy",
+    "address": [
+      {
+        "is_show": true,
+        "url": "https://maps.app.goo.gl/4gkxgQdoMJpb8awGA",
+        "content": "11011 Richmond Ave Ste 250 Houston, TX 77042"
+      },
+      {
+        "is_show": false,
+        "url": "https://maps.app.goo.gl/4gkxgQdoMJpb8awGA",
+        "content": "11011 Richmond Ave Ste 250 Houston, TX 77042"
+      }
+    ],
+    "phone": [
+      {
+        "is_show": true,
+        "url": "tel:832-968-6668",
+        "content": "832-968-6668"
+      }
+    ],
+    "email": [
+      {
+        "is_show": true,
+        "url": "mailto:contact@fastboy.net",
+        "content": "contact@fastboy.net"
+      }
+    ],
+    "business": {
+      "is_show": true,
+      "list_item": [
+        {
+          "label": "Monday",
+          "content": "10:00 AM - 7:00 PM"
+        },
+        {
+          "label": "Tuesday",
+          "content": "10:00 AM - 7:00 PM"
+        },
+        {
+          "label": "Wednesday",
+          "content": "Closed"
+        },
+        {
+          "label": "Thursday",
+          "content": "12 PM – 7 PMs"
+        },
+        {
+          "label": "Friday",
+          "content": "12 PM – 7 PMs"
+        },
+        {
+          "label": "Saturday",
+          "content": "12 PM – 7 PMs"
+        },
+        {
+          "label": "Sunday",
+          "content": "Closed"
+        }
+      ]
+    },
+    "social": [
+      {
+        "is_show": true,
+        "open_new_tab": true,
+        "image": "/images/icon-youtube.png",
+        "image_alt": "Youtube icon",
+        "link": "https://www.youtube.com"
+      },
+      {
+        "is_show": true,
+        "open_new_tab": true,
+        "image": "/images/icon-facebook.png",
+        "image_alt": "Facebook icon",
+        "link": "https://www.facebook.com"
+      },
+      {
+        "is_show": true,
+        "open_new_tab": true,
+        "image": "/images/icon-google.png",
+        "image_alt": "Google icon",
+        "link": "https://www.google.com"
+      },
+      {
+        "is_show": true,
+        "open_new_tab": true,
+        "image": "/images/icon-linkedin.png",
+        "image_alt": "Linkedin icon",
+        "link": "https://www.linkedin.com"
+      }
+    ],
+    "iframe_map": [
+      {
+        "is_show": true,
+        "content": "<iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d27717.938160330737!2d-95.570856!3d29.727224!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640ddc6ed681049%3A0x74ace03ed50728e8!2sFastboy%20Marketing%20%26%20Construction!5e0!3m2!1sen!2sus!4v1720581863901!5m2!1sen!2sus' width='100%' height='450' style='border:0;' allowfullscreen=' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>"
+      },
+      {
+        "is_show": false,
+        "content": "<iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d27717.938160330737!2d-95.570856!3d29.727224!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640ddc6ed681049%3A0x74ace03ed50728e8!2sFastboy%20Marketing%20%26%20Construction!5e0!3m2!1sen!2sus!4v1720581863901!5m2!1sen!2sus' width='100%' height='450' style='border:0;' allowfullscreen=' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>"
+      }
+    ],
+    "link_booking": "/#",
+    "_inputs": {
+      "logo": {
+        "type": "image",
+        "label": "Logo"
+      },
+      "logo_alt": {
+        "type": "text",
+        "label": "Logo alt"
+      },
+      "business.content": {
+        "type": "textarea",
+        "label": "Content"
+      },
+      "address[*].content": {
+        "type": "textarea",
+        "label": "Content"
+      },
+      "address[*].url": {
+        "type": "text",
+        "label": "Url"
+      },
+      "iframe_map[*].content": {
+        "type": "textarea",
+        "label": "Map"
+      },
+      "phone[*].content": {
+        "type": "text",
+        "label": "Content"
+      },
+      "phone[*].url": {
+        "type": "text",
+        "label": "Url"
+      },
+      "business_name": {
+        "type": "text",
+        "label": "Business name"
+      }
+    }
+  }
+}

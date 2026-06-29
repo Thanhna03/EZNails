@@ -1,0 +1,203 @@
+{
+  "en": {
+    "background_color": "#ffffff",
+    "background_image": "",
+    "nav": [
+      {
+        "link": "/",
+        "text": "Home",
+        "open_new_tab": false,
+        "sub_nav": [
+          {
+            "link": "/#",
+            "text": "Sub Home",
+            "open_new_tab": false,
+            "sub_nav": [
+              {
+                "link": "/#",
+                "text": "Sub Home 1",
+                "open_new_tab": false
+              },
+              {
+                "link": "/#",
+                "text": "Sub Home 2",
+                "open_new_tab": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "link": "/about",
+        "text": "About us",
+        "open_new_tab": false,
+        "sub_nav": [
+          {
+            "link": "",
+            "text": "",
+            "open_new_tab": false,
+            "sub_nav": [
+              {
+                "link": "",
+                "text": "",
+                "open_new_tab": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "link": "/service",
+        "text": "Services",
+        "open_new_tab": false,
+        "sub_nav": [
+          {
+            "link": "",
+            "text": "",
+            "open_new_tab": false,
+            "sub_nav": [
+              {
+                "link": "",
+                "text": "",
+                "open_new_tab": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "link": "/booking",
+        "text": "Booking",
+        "open_new_tab": false,
+        "sub_nav": [
+          {
+            "link": "",
+            "text": "",
+            "open_new_tab": false,
+            "sub_nav": [
+              {
+                "link": "",
+                "text": "",
+                "open_new_tab": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "link": "/coupons",
+        "text": "Coupons",
+        "open_new_tab": false,
+        "sub_nav": [
+          {
+            "link": "",
+            "text": "",
+            "open_new_tab": false,
+            "sub_nav": [
+              {
+                "link": "",
+                "text": "",
+                "open_new_tab": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "link": "/giftcards",
+        "text": "Gift cards",
+        "open_new_tab": false,
+        "sub_nav": [
+          {
+            "link": "",
+            "text": "",
+            "open_new_tab": false,
+            "sub_nav": [
+              {
+                "link": "",
+                "text": "",
+                "open_new_tab": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "link": "/gallery",
+        "text": "Gallery",
+        "open_new_tab": false,
+        "sub_nav": [
+          {
+            "link": "",
+            "text": "",
+            "open_new_tab": false,
+            "sub_nav": [
+              {
+                "link": "",
+                "text": "",
+                "open_new_tab": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "link": "/contact",
+        "text": "Contact us",
+        "open_new_tab": false,
+        "sub_nav": [
+          {
+            "link": "",
+            "text": "",
+            "open_new_tab": false,
+            "sub_nav": [
+              {
+                "link": "",
+                "text": "",
+                "open_new_tab": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "link": "/blog",
+        "text": "Blog",
+        "open_new_tab": false,
+        "sub_nav": [
+          {
+            "link": "",
+            "text": "",
+            "open_new_tab": false,
+            "sub_nav": [
+              {
+                "link": "",
+                "text": "",
+                "open_new_tab": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extend": {},
+    "_inputs": {
+      "logo": {
+        "type": "image",
+        "label": "Logo"
+      },
+      "logo_alt": {
+        "type": "text",
+        "label": "Logo alt"
+      },
+
+      "background_color": {
+        "type": "color"
+      },
+      "background_image": {
+        "type": "image",
+        "label": "Background image"
+      }
+    }
+  }
+}

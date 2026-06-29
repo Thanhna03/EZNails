@@ -1,0 +1,16 @@
+title: Booking
+seo:
+  page_description:
+  canonical_url:
+  featured_image:
+  featured_image_alt:
+  author_twitter_handle:
+  open_graph_type:
+  no_index: false
+  
+content_blocks:
+  - _block_name: section/breadcrumbs
+    status: true
+    title: About us
+    background_image: /images/bg-breadcrumb.png
+    

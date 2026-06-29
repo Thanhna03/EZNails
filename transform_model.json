@@ -1,0 +1,106 @@
+{
+  "service": {
+    "block": {
+      "_block_name": "service/item",
+      "status": true,
+      "background_color": "#FFFFFF",
+      "background_image": null,
+      "is_reverse": false,
+      "is_hot": true,
+      "is_show_switch_price": false,
+      "image": "/images/service6.png",
+      "image_alt": "Nails",
+      "title": "PINK & WHITE POWDER",
+      "description_simple": null
+    },
+    "wrapper": "list_service",
+    "page_path": "content/service.yml",
+    "key_reverse": "is_reverse",
+    "reverse_default": true,
+    "product": {
+      "price": {
+        "external_key": "product_price"
+      },
+      "label": {
+        "external_key": "product_name"
+      },
+      "description_simple": {
+        "external_key": "product_description"
+      }
+    },
+    "category": {
+      "title": {
+        "external_key": "product_group_name"
+      },
+      "image": {
+        "external_key": "product_group_avatar"
+      },
+      "description_simple": {
+        "external_key": "product_group_description"
+      }
+    }
+  },
+  "gallery": {
+    "type": "category",
+    "block": {
+      "_block_name": "gallery/hero",
+      "status": true,
+      "background_color": "#FFFFFF",
+      "background_image": null,
+      "sort": "Default"
+    },
+    "wrapper": "gallery",
+    "page_path": "content/gallery.yml",
+    "category": {
+      "label": {
+        "external_key": "category_title"
+      }
+    },
+    "wrapper_item": "item",
+    "item": {
+      "image": {
+        "external_key": "image"
+      },
+      "image_alt": {
+        "external_key": "image_alt"
+      }
+    }
+  },
+  "banner": {
+    "block": {
+      "_block_name": "section/hero",
+      "status": true
+    },
+    "wrapper": "list_item",
+    "page_path": "content/index.yml",
+    "items": {
+      "image_alt": {
+        "external_key": "logo_src"
+      },
+      "image": {
+        "external_key": "image_alt"
+      }
+    }
+  },
+  "footer": {},
+  "coupon": {
+    "block": {
+      "_block_name": "coupon/hero",
+      "status": true,
+      "background_color": "#ffffff",
+      "background_image": null,
+      "title": "NEW PROMOTION",
+      "description": null 
+    },
+    "wrapper": "list_item",
+    "page_path": "content/coupons.yml",
+    "items": {
+      "image": {
+        "external_key": "image_src"
+      },
+      "image_alt": {
+        "external_key": "image_alt"
+      }
+    }
+  }
+}

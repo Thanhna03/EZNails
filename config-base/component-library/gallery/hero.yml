@@ -1,0 +1,49 @@
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - content_blocks
+  label: Gallery Hero Section
+  description: Gallery Hero Section
+  icon: 'cottage'
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  status: true
+  background_color: '#ffffff'
+  background_image:
+  sort: 'Default'
+  gallery:
+    - label: Nails Design
+      is_hot: true
+      item: 
+        - image: /images/galleryitem1.jpeg
+          image_alt: gallery item Image 1
+          is_hot: true
+          priority: 0
+          created_at: 1730344576000
+  # If section need filter custom
+  extend:
+    image_deco: ''
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:
+  status:
+    type: toggle
+    label: Active Section
+  gallery[*].label:
+    type: text
+    label: Label of tab gallery
+  gallery[*].is_hot:
+    type: toggle
+    label: Tab gallery hot
+  gallery[*].item[*].image:
+    type: image
+    label: Image of gallery item
+  gallery[*].item[*].image_alt:
+    type: text
+    label: Image alt of gallery item
+  gallery[*].item[*].priority:
+    type: text
+    label: Priority of gallery item

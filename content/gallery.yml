@@ -1,0 +1,149 @@
+title: Gallery
+seo:
+  page_description:
+  canonical_url:
+  featured_image:
+  featured_image_alt:
+  author_twitter_handle:
+  open_graph_type:
+  no_index: false
+  
+content_blocks:
+  - _block_name: section/breadcrumbs
+    status: true
+    title: About us
+    background_image: /images/bg-breadcrumb.png
+    
+
+  - _block_name: gallery/hero
+    status: true
+    background_color: '#ffffff'
+    background_image:
+    sort: 'Default'
+    gallery:
+      - label: Nails Design
+        is_hot: true
+        item: 
+          - image: /images/galleryitem1.jpeg
+            image_alt: gallery item Image 1
+            is_hot: true
+            priority: 0
+            created_at: 1730344576000
+          - image: /images/galleryitem2.jpeg
+            image_alt: gallery item Image 2
+            is_hot: true
+            priority: 0
+            created_at: 1730344576002
+          - image: /images/galleryitem3.jpeg
+            image_alt: gallery item Image 3
+            is_hot: true
+            priority: 0
+            created_at: 1730344576004
+          - image: /images/galleryitem4.jpeg
+            image_alt: gallery item Image 4
+            is_hot: true
+            priority: 0
+            created_at: 1730344576006
+          - image: /images/galleryitem5.jpeg
+            image_alt: gallery item Image 5
+            is_hot: true
+            priority: 0
+            created_at: 1730344576008
+          - image: /images/galleryitem6.jpeg
+            image_alt: gallery item Image 6
+            is_hot: true
+            priority: 0
+            created_at: 1730344576010
+          - image: /images/galleryitem7.jpeg
+            image_alt: gallery item Image 7
+            is_hot: false
+            priority: 0
+            created_at: 1730344576012
+          - image: /images/galleryitem8.jpeg
+            image_alt: gallery item Image 8
+            is_hot: false
+            priority: 0
+            created_at: 1730344576014
+          - image: /images/galleryitem9.jpg
+            image_alt: gallery item Image 9
+            is_hot: false
+            priority: 0
+            created_at: 1730344576016
+          - image: /images/galleryitem10.jpg
+            image_alt: gallery item Image 10
+            is_hot: false
+            priority: 0
+            created_at: 1730344576018
+          - image: /images/galleryitem11.jpeg
+            image_alt: gallery item Image 11
+            is_hot: false
+            priority: 0
+            created_at: 1730344576020
+          - image: /images/galleryitem12.jpeg
+            image_alt: gallery item Image 12
+            is_hot: false
+            priority: 0
+            created_at: 1730344576022
+      - label: Nails Design 2
+        is_hot: false
+        item: 
+          - image: /images/galleryitem1.jpeg
+            image_alt: gallery item Image 1
+            is_hot: true
+            priority: 0
+            created_at: 1730344576000
+          - image: /images/galleryitem2.jpeg
+            image_alt: gallery item Image 2
+            is_hot: true
+            priority: 0
+            created_at: 1730344576002
+          - image: /images/galleryitem3.jpeg
+            image_alt: gallery item Image 3
+            is_hot: true
+            priority: 0
+            created_at: 1730344576004
+          - image: /images/galleryitem4.jpeg
+            image_alt: gallery item Image 4
+            is_hot: true
+            priority: 0
+            created_at: 1730344576006
+          - image: /images/galleryitem5.jpeg
+            image_alt: gallery item Image 5
+            is_hot: true
+            priority: 0
+            created_at: 1730344576008
+          - image: /images/galleryitem6.jpeg
+            image_alt: gallery item Image 6
+            is_hot: true
+            priority: 0
+            created_at: 1730344576010
+          - image: /images/galleryitem7.jpeg
+            image_alt: gallery item Image 7
+            is_hot: true
+            priority: 0
+            created_at: 1730344576012
+          - image: /images/galleryitem8.jpeg
+            image_alt: gallery item Image 8
+            is_hot: true
+            priority: 0
+            created_at: 1730344576014
+          - image: /images/galleryitem9.jpg
+            image_alt: gallery item Image 9
+            is_hot: true
+            priority: 0
+            created_at: 1730344576016
+          - image: /images/galleryitem10.jpg
+            image_alt: gallery item Image 10
+            is_hot: true
+            priority: 0
+            created_at: 1730344576018
+          - image: /images/galleryitem11.jpeg
+            image_alt: gallery item Image 11
+            is_hot: true
+            priority: 0
+            created_at: 1730344576020
+          - image: /images/galleryitem12.jpeg
+            image_alt: gallery item Image 12
+            is_hot: true
+            priority: 0
+            created_at: 1730344576022
