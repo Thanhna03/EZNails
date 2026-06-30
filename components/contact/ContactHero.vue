@@ -4,13 +4,13 @@
   <section v-if="block.status" :data-cms-bind="dataBinding" :style="backgroundComputed" class="py-10">
     <div class="container">
       <div class="w-full flex flex-col gap-4 pb-4">
-        <div v-if="block.map_title" itemprop="title" class="title text-[18px] ckeditor-custom"
+        <div v-if="block.map_title" itemprop="title" class="title_contact text-[18px] ckeditor-custom"
           v-html="block.map_title" />
         <div v-for="(item, index) in settingData.iframe_map" :key="index" v-show="item.is_show" class="google-maps"
           v-html="item.content" />
       </div>
       <div class="flex flex-col lg:gap-4 gap-6">
-        <div class="flex flex-row gap-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div class="flex flex-col gap-[33px]">
             <!-- Address -->
             <div v-for="(item, index) in settingData.address" :key="`address-${index}`" v-show="item.is_show"
@@ -89,7 +89,7 @@
           color: block.color_input_form
         }">
 
-          <div v-if="block.title_form" itemprop="title" class="title text-[18px] ckeditor-custom"
+          <div v-if="block.title_form" itemprop="title" class="title_contact text-[18px] ckeditor-custom"
             v-html="block.title_form" />
 
           <div v-if="block.list_fields" class="flex flex-wrap -mx-2">
@@ -871,5 +871,11 @@ watch(
 .popup-content p {
   font-size: 14px !important;
   text-align: left !important;
+}
+
+.title_contact{
+  font-size:26px;
+  color: #7BB303;
+
 }
 </style>

@@ -14,18 +14,18 @@
     </NuxtLink>
     <div class="flex flex-col">
       <div class=" flex items-start">
-        <div class="flex flex-col items-center justify-center border-2 text-center border-main p-2 w-fit font-medium">
+        <div class="flex flex-col items-center justify-center border-2 text-center border-foreground text-foreground p-2 w-fit font-medium">
           <span>{{ renderDateMonth(data.date).date }}</span>
           <span>{{ renderDateMonth(data.date).month }}</span>
         </div>
         <div class="ml-2">
           <NuxtLink :to="data._path">
-            <span class="mb-2 lg:text-lg text-base line-clamp-2 font-medium capitalize">
+            <span class="mb-2 lg:text-lg line-clamp-2 text-secondary capitalize">
               {{ data.title }}
             </span>
           </NuxtLink>
           <div
-            class="text-sm font-medium ckeditor-custom text-text-blog-secondary line-clamp-2 mb-2"
+            class="text-sm font-medium ckeditor-custom text-foreground line-clamp-2 mb-2"
             v-html="data.desc"
           />
           <div v-if="data?.category?.length === 1 && data?.category[0]?.text" class="block">
@@ -37,10 +37,10 @@
             </NuxtLink>
           </div>
           <div v-else-if="data?.category?.length > 0" class="block">
-            <span class="mb-2 text-left text-sm ckeditor-custom text-text-blog-secondary">Posted in:
+            <span class="mb-2 text-left text-sm ckeditor-custom text-foreground">Posted in:
             </span>
             <NuxtLink v-for="post, i in renderCateOrTag(data, 'category')" :key="i" :to="post._path" :target="post?.open_new_tab ? '_blank': ''" class=" mr-1">
-              <span class="hover:underline text-text-blog-secondary text-left text-sm ckeditor-custom">{{
+              <span class="hover:underline text-foreground text-left text-sm ckeditor-custom">{{
                 post.text }}</span>
             </NuxtLink>
           </div>

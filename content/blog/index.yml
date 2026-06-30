@@ -8,7 +8,7 @@ seo:
   open_graph_type:
   no_index: true
   
-background_color: '#ffffff'
+background_color: '#191919'
 background_image: ''
 items_per_page : 6
 related_post : true

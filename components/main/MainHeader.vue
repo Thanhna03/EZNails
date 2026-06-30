@@ -43,14 +43,22 @@
                 :to="item.link"
                 :target="item.open_new_tab ? '_blank' : ''"
                 class="flex-1 flex items-center gap-3 px-6 py-3 text-xs font-semibold tracking-[0.2em] uppercase transition-colors duration-200"
-                :class="linkActive === item.link ? 'text-secondary' : 'text-white/80 hover:text-secondary'"
+                :class="
+                  linkActive === item.link
+                    ? 'text-secondary'
+                    : 'text-white/80 hover:text-secondary'
+                "
                 @click="closeMenu()"
               >
                 <span class="text-white/30 text-base">❖</span>
                 {{ item.text }}
               </NuxtLink>
               <button
-                v-if="item.sub_nav && item.sub_nav.length > 0 && item.sub_nav[0].text"
+                v-if="
+                  item.sub_nav &&
+                  item.sub_nav.length > 0 &&
+                  item.sub_nav[0].text
+                "
                 @click="toggleMobileSubmenu(index)"
                 class="pr-4 text-white/50 hover:text-white/90 transition-colors"
               >
@@ -62,9 +70,15 @@
               </button>
             </div>
             <div
-              v-if="item.sub_nav && item.sub_nav.length > 0 && item.sub_nav[0].text"
+              v-if="
+                item.sub_nav && item.sub_nav.length > 0 && item.sub_nav[0].text
+              "
               class="overflow-hidden transition-all duration-300"
-              :class="mobileSubmenuOpen[index] ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'"
+              :class="
+                mobileSubmenuOpen[index]
+                  ? 'max-h-64 opacity-100'
+                  : 'max-h-0 opacity-0'
+              "
             >
               <ul class="bg-black/20 border-t border-white/5">
                 <li v-for="(subItem, subIndex) in item.sub_nav" :key="subIndex">
@@ -81,8 +95,15 @@
             </div>
           </li>
         </ul>
-        <div v-if="countries.length > 1" class="px-6 py-3 border-t border-white/10 mt-2">
-          <USelect v-model="country" :options="countries" option-attribute="name" />
+        <div
+          v-if="countries.length > 1"
+          class="px-6 py-3 border-t border-white/10 mt-2"
+        >
+          <USelect
+            v-model="country"
+            :options="countries"
+            option-attribute="name"
+          />
         </div>
       </div>
     </div>
@@ -94,7 +115,11 @@
     >
       <!-- Logo & Address -->
       <div class="text-center py-8 px-4 border-b border-white/10">
-        <NuxtLink v-if="settingData.logo" :to="homeUrl" class="inline-block mb-3">
+        <NuxtLink
+          v-if="settingData.logo"
+          :to="homeUrl"
+          class="inline-block mb-3"
+        >
           <img
             :src="settingData.logo"
             :alt="settingData.logo_alt"
@@ -116,24 +141,38 @@
       <!-- Collapsible: Nav + Language Switcher -->
       <div
         class="overflow-hidden transition-all duration-500 ease-in-out"
-        :class="navCollapsed ? 'max-h-0 opacity-0' : 'max-h-[2000px] opacity-100'"
+        :class="
+          navCollapsed ? 'max-h-0 opacity-0' : 'max-h-[2000px] opacity-100'
+        "
       >
         <!-- Nav -->
         <nav class="py-4">
           <ul class="list-none">
-            <li v-for="(item, index) in headerData.nav" :key="index" class="relative">
+            <li
+              v-for="(item, index) in headerData.nav"
+              :key="index"
+              class="relative"
+            >
               <div class="flex items-center">
                 <NuxtLink
                   :to="item.link"
                   :target="item.open_new_tab ? '_blank' : ''"
                   class="flex-1 flex items-center gap-3 px-6 py-3 text-xs font-semibold tracking-[0.2em] uppercase transition-colors duration-200"
-                  :class="linkActive === item.link ? 'text-secondary' : 'text-white/80 hover:text-secondary'"
+                  :class="
+                    linkActive === item.link
+                      ? 'text-secondary'
+                      : 'text-white/80 hover:text-secondary'
+                  "
                 >
                   <span class="text-white/30 text-base">❖</span>
                   {{ item.text }}
                 </NuxtLink>
                 <button
-                  v-if="item.sub_nav && item.sub_nav.length > 0 && item.sub_nav[0].text"
+                  v-if="
+                    item.sub_nav &&
+                    item.sub_nav.length > 0 &&
+                    item.sub_nav[0].text
+                  "
                   @click="toggleMobileSubmenu(index)"
                   class="pr-4 text-white/50 hover:text-white/90 transition-colors"
                 >
@@ -146,12 +185,23 @@
               </div>
               <!-- Sub Nav Accordion -->
               <div
-                v-if="item.sub_nav && item.sub_nav.length > 0 && item.sub_nav[0].text"
+                v-if="
+                  item.sub_nav &&
+                  item.sub_nav.length > 0 &&
+                  item.sub_nav[0].text
+                "
                 class="overflow-hidden transition-all duration-300"
-                :class="mobileSubmenuOpen[index] ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'"
+                :class="
+                  mobileSubmenuOpen[index]
+                    ? 'max-h-64 opacity-100'
+                    : 'max-h-0 opacity-0'
+                "
               >
                 <ul class="bg-black/20 border-t border-white/5">
-                  <li v-for="(subItem, subIndex) in item.sub_nav" :key="subIndex">
+                  <li
+                    v-for="(subItem, subIndex) in item.sub_nav"
+                    :key="subIndex"
+                  >
                     <NuxtLink
                       :to="subItem.link"
                       :target="subItem.open_new_tab ? '_blank' : ''"
@@ -166,14 +216,37 @@
           </ul>
         </nav>
 
-        <!-- Language Switcher -->
-        <div v-if="countries.length > 1" class="px-6 py-4 border-t border-white/10">
-          <USelect v-model="country" :options="countries" option-attribute="name" />
+        <div
+          v-if="countries.length > 1"
+          class="px-6 py-4 border-t border-white/10"
+        >
+          <USelect
+            v-model="country"
+            :options="countries"
+            option-attribute="name"
+          />
         </div>
       </div>
+      <div class="relative w-full">
+        <!-- Background -->
+        <img
+          src="/images/header-bottom-shape2.png"
+          alt=""
+          class="absolute inset-10 top-0 left-[90px] aspect-[3/2] object-cover -z-10"
+        />
 
-      <!-- Bottom Shape Image + Toggle Button -->
-      <div class="relative flex-shrink-0 bg-white">
+        <!-- Optional overlay -->
+        <div class="absolute -z-10"></div>
+
+        <!-- Shape -->
+        <img
+          src="/images/header-bottom-shape.png"
+          alt=""
+          class="relative w-full block"
+        />
+      </div>
+
+      <!-- <div class="relative flex-shrink-0">
         <img
           src="/images/header-bottom-shape.png"
           alt=""
@@ -185,12 +258,17 @@
             class="w-10 h-10 rounded-full bg-gray-500/70 hover:bg-gray-400/90 flex items-center justify-center transition-colors shadow-lg"
           >
             <UIcon
-              :name="navCollapsed ? 'i-heroicons-chevron-down' : 'i-heroicons-chevron-up'"
+              :name="
+                navCollapsed
+                  ? 'i-heroicons-chevron-down'
+                  : 'i-heroicons-chevron-up'
+              "
               class="text-white"
             />
           </button>
         </div>
-      </div>
+      </div> -->
+
     </div>
   </div>
 </template>

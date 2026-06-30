@@ -13,17 +13,17 @@
           <div class="w-full flex flex-col jus items-center">
             <div class="flex flex-col gap-2.5">
               <div class=" flex items-start py-3">
-                <div class="flex flex-col items-center justify-center border-2 text-center border-main p-2 w-fit font-medium">
+                <div class="flex flex-col items-center justify-center border-2 text-center border-foreground text-foreground p-2 w-fit font-medium">
                   <span>{{ renderDateMonth(pageData.date)?.date }}</span>
                   <span>{{ renderDateMonth(pageData.date)?.month }}</span>
                 </div>
                 <div class=" ml-2">
-                  <h2 class="text-lg leading-normal text-start font-bold">{{ pageData.title }}</h2>
+                  <h2 class="text-lg leading-normal text-start font-bold text-[#eaae05]">{{ pageData.title }}</h2>
                   <div class="block text-text-blog-secondary">
-                    <span class="mb-2 text-left text-lg ">Posted in: </span>
+                    <span class="mb-2 text-white text-lg ">Posted in: </span>
                     <NuxtLink v-for="item, i in renderCateOrTag(pageData, 'category')" :key="i"
                       :target="item?.open_new_tab ? '_blank' : ''" :to="item._path" class=" mr-1">
-                      <span class="mb-2 hover:underline text-left text-lg">{{ item.text }}</span>
+                      <span class="mb-2 hover:underline text-white text-lg">{{ item.text }}</span>
                     </NuxtLink>
                   </div>
                 </div>
@@ -31,17 +31,17 @@
 
               <div class="flex font-khand items-center gap-2 md:text-base text-sm md:leading-[2] leading-[1]">
                 <NuxtLink v-if="pageData.author.text" :to="pageData.author.url"
-                  class="transition-all text-base font-bold duration-300 hover:text-gray-500">
+                  class="transition-all text-white font-bold duration-300 hover:text-gray-500">
                   {{ pageData.author.text }}
                 </NuxtLink>
                 <span v-if="pageData.author.text" class="separator">•</span>
                 <div v-if="renderDatePost(pageData.date)" class=" flex justify-center items-center gap-2">
-                  <span class=" block text-base font-semibold text-text-blog-secondary">{{ renderDatePost(pageData.date) }}</span>
+                  <span class=" block font-semibold text-white">{{ renderDatePost(pageData.date) }}</span>
                 </div>
               </div>
-              <div class="text-start py-4 text-text-blog-secondary font-medium italic text-sm ckeditor-custom"
+              <div class="text-start py-4 text-white font-medium italic text-sm ckeditor-custom"
                 v-html="pageData.desc" />
-              <div class="text-lg leading-normal ckeditor-custom" v-html="pageData.content" />
+              <div class="text-lg text-foreground leading-normal ckeditor-custom" v-html="pageData.content" />
             </div>
           </div>
         </div>

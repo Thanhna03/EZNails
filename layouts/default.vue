@@ -1,9 +1,11 @@
 <template>
-  <div class="">
-    <div class="container grid grid-cols-1 lg:grid-cols-[3fr_7fr] gap-4">
+  <div class="min-h-screen">
+    <div class="grid grid-cols-1 lg:grid-cols-[3fr_7fr] container gap-4">
+      <!-- Left: Sticky Sidebar -->
       <div class="lg:h-full">
         <MainHeader />
       </div>
+      <!-- Right: Page Content -->
       <div>
         <main class="grow">
           <slot />
@@ -12,6 +14,7 @@
         <MainFloatingButtons />
       </div>
     </div>
+
     <div class="sr-only">
       <!-- Logo -->
       <img v-if="settingData.logo" itemprop="logo" :src="settingData.logo" :alt="settingData.logo_alt || 'Logo'" />
@@ -27,18 +30,14 @@
       <!-- Telephone -->
       <template v-for="(info, index) in settingData.phone" :key="'phone-' + index">
         <a v-if="info.is_show" :href="info.url || 'tel:' + info.content" itemprop="url">
-          <span itemprop="telephone">
-            {{ info.content }}
-          </span>
+          <span itemprop="telephone">{{ info.content }}</span>
         </a>
       </template>
 
       <!-- Email -->
       <template v-for="(info, index) in settingData.email" :key="'email-' + index">
         <a v-if="info.is_show" :href="info.url || 'mailto:' + info.content" itemprop="url">
-          <span itemprop="email">
-            {{ info.content }}
-          </span>
+          <span itemprop="email">{{ info.content }}</span>
         </a>
       </template>
 
@@ -51,8 +50,8 @@
 
       <!-- Opening Hours -->
       <template v-if="settingData.business?.is_show">
-        <div v-for="(item, index) in settingData.business.list_item" :key="'hours-' + index" itemprop="openingHours"
-          :content="`${item?.label} ${item?.content}`"></div>
+        <div v-for="(item, index) in settingData.business.list_item" :key="'hours-' + index"
+          itemprop="openingHours" :content="`${item?.label} ${item?.content}`"></div>
       </template>
 
       <!-- Navigation -->
@@ -61,14 +60,10 @@
           <a :href="item.link" itemprop="url">
             <span itemprop="name">{{ item.text }}</span>
           </a>
-
-          <!-- Sub Nav -->
           <template v-for="(subItem, subIndex) in item.sub_nav" :key="'sub-' + subIndex">
             <a :href="subItem.link" itemprop="url">
               <span itemprop="name">{{ subItem.text }}</span>
             </a>
-
-            <!-- Sub Sub Nav -->
             <template v-for="(subSubItem, subSubIndex) in subItem.sub_nav" :key="'subsub-' + subSubIndex">
               <a :href="subSubItem.link" itemprop="url">
                 <span itemprop="name">{{ subSubItem.text }}</span>
@@ -84,6 +79,7 @@
 <script setup lang="ts">
 import header from "@/data/header.json";
 import setting from "@/data/setting.json";
+
 const languageStore = useLanguageStore();
 const settingData = computed(() => languageStore.getLocalizedData(setting));
 const headerData = computed(() => languageStore.getLocalizedData(header));

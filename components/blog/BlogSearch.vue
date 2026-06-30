@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class=" text-main text-lg font-bold mb-2">Search</h3>
+    <h3 class=" text-[#eaae05] text-lg font-bold mb-2">Search</h3>
     <div class=" relative w-full border !border-l-0 mb-7">
       <span class="absolute top-1/2 -translate-y-1/2 left-0 bg-main h-[2px] w-1/5" />
     </div>

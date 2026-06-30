@@ -1,6 +1,25 @@
 {
   "en": {
     "background_color": "#1c1c1c",
+    "hero": {
+      "enable": true,
+      "slides": [
+        { "image": "/images/E-Z-Nails-top-notch-nail-salon-in-Lomita-Torrance-CA-90505.jpg" },
+        { "image": "/images/E-Z-Nails-top-notch-nail-salon-in-Lomita-Torrance-CA-90505-No-1.jpg" },
+        { "image": "/images/E-Z-Nails-top-notch-nail-salon-in-Lomita-Torrance-CA-90505-No-2.jpg" }
+      ],
+      "buttons": [
+        { "text": "310-326-1273", "link": "tel:3103261273" },
+        { "text": "24204 Crenshaw Blvd\nTorrance, CA 90505", "link": "/contact" },
+        { "text": "Read More", "link": "/contact" }
+      ],
+      "_inputs": {
+        "enable": { "type": "checkbox", "label": "Hero Enable" },
+        "slides[*].image": { "type": "image", "label": "Slide Image" },
+        "buttons[*].text": { "type": "text", "label": "Button Text" },
+        "buttons[*].link": { "type": "text", "label": "Button Link" }
+      }
+    },
     "nav": [
       {
         "link": "/",

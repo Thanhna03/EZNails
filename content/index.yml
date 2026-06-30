@@ -10,77 +10,87 @@ seo:
   
 content_blocks:
   # Base default section
-  - _block_name: section/default
-    status: false
-    background_color: '#FFF4FE'
-    background_image: 
-    title: Title section default
-    sub_title: Sub title section default
-    sub_description: Sub description section default
-    description: Description section default
-    content: Content section default
-    # If section has image
-    image: /images/aboutpage.jpeg
-    image_alt: Image alt section default
-    # If section has button
-    button:
-      is_show: true
-      url: /coupons
-      text: View more
-      open_new_tab: false
-    # For grid layout list item
-    layout_list: 4
-    # For gallery layout list item
-    sort: 'Default'
-    # If section has list item
-    list_item:
-      - title: Title list item
-        description: Description list item
-        image: /images/aboutpage.jpeg
-        image_alt: Image alt list item
-    extend:
-      image_deco: ''
+  # - _block_name: section/hero
+  #   status: true
+  #   home:
+  #     - image_alt: Home page 1
+  #       image: /images/E-Z-Nails-top-notch-nail-salon-in-Lomita-Torrance-CA-90505-No-1.jpg
+  #     - image_alt: Home page 2
+  #       image: /images/E-Z-Nails-top-notch-nail-salon-in-Lomita-Torrance-CA-90505-No-2.jpg
+  #     - image_alt: Home page 3
+  #       image: /images/E-Z-Nails-top-notch-nail-salon-in-Lomita-Torrance-CA-90505.jpg
 
-  - _block_name: section/service
-    status: true
-    background_color: '#ffffff'
-    background_image: 
-    title: Our Services
-    description: >-
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-    button:
-      is_show: true
-      url: /coupons
-      text: View more
-      open_new_tab: false
+  # - _block_name: section/default
+  #   status: false
+  #   background_color: '#FFF4FE'
+  #   background_image: 
+  #   title: Title section default
+  #   sub_title: Sub title section default
+  #   sub_description: Sub description section default
+  #   description: Description section default
+  #   content: Content section default
+  #   # If section has image
+  #   image: /images/aboutpage.jpeg
+  #   image_alt: Image alt section default
+  #   # If section has button
+  #   button:
+  #     is_show: true
+  #     url: /coupons
+  #     text: View more
+  #     open_new_tab: false
+  #   # For grid layout list item
+  #   layout_list: 4
+  #   # For gallery layout list item
+  #   sort: 'Default'
+  #   # If section has list item
+  #   list_item:
+  #     - title: Title list item
+  #       description: Description list item
+  #       image: /images/aboutpage.jpeg
+  #       image_alt: Image alt list item
+  #   extend:
+  #     image_deco: ''
 
-  - _block_name: section/photo
-    status: false
-    sort: 'Default'
-    background_color: '#ffffff'
-    background_image:
-    title: Our Gallery
-    description: >-
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-    button:
-      is_show: true
-      url: /gallery
-      text: View more
-      open_new_tab: false
-    extend:
-      business:
-        title: Business Hours
-        background_color: '#FFF4FE'  
+  # - _block_name: section/service
+  #   status: true
+  #   background_color: '#ffffff'
+  #   background_image: 
+  #   title: Our Services
+  #   description: >-
+  #     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+  #   button:
+  #     is_show: true
+  #     url: /coupons
+  #     text: View more
+  #     open_new_tab: false
+
+  # - _block_name: section/photo
+  #   status: false
+  #   sort: 'Default'
+  #   background_color: '#ffffff'
+  #   background_image:
+  #   title: Our Gallery
+  #   description: >-
+  #     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+  #   button:
+  #     is_show: true
+  #     url: /gallery
+  #     text: View more
+  #     open_new_tab: false
+  #   extend:
+  #     business:
+  #       title: Business Hours
+  #       background_color: '#FFF4FE'  
         
-  - _block_name: section/coupon
-    status: false
-    background_color: '#ffffff'
-    background_image:
-    title: NEW PROMOTION
-    description: >-
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-    button:
-      is_show: true
-      url: /coupons
-      text: View more
-      open_new_tab: false
+  # - _block_name: section/coupon
+  #   status: false
+  #   background_color: '#ffffff'
+  #   background_image:
+  #   title: NEW PROMOTION
+  #   description: >-
+  #     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+  #   button:
+  #     is_show: true
+  #     url: /coupons
+  #     text: View more
+  #     open_new_tab: false
