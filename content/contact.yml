@@ -17,21 +17,28 @@ content_blocks:
 
   - _block_name: contact/hero
     status: true
-    background_color: '#ffffff'
+    background_color: '#191919'
     background_image: 
-    title: Welcome to
-    sub_title: Deluxe Nails & Spa
-    image: /images/aboutpage.jpeg
-    image_alt: Deluxe Nails & Spa Alt
+    map_title: Find us on the map
     title_form: Send us a message
     color_input_form: '#000000'
+    address:
+      address_icon: /images/icons8-location-50 (3).png
+      title: Address
+    phone:
+      phone_icon: /images/icons8-phone-50 (3).png
+      title: Tel
+    email:
+      email_icon: /images/icons8-email-50 (3).png
+      title: Email
+    business_hours_title: Business Hours
     button:
-      background_color: "#DB00C5"
+      background_color: "#7BB303"
       color: "#ffffff"
       border: 25
       text_button: Send Us
       variant: solid
-      width_button: 1/2
+      width_button: auto
       align_button: center
     list_fields:
       - fields: text

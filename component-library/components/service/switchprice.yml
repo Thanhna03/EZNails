@@ -1,0 +1,57 @@
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - content_blocks
+  label: Button Switch Price Tax Service
+  description: Button Switch Price Tax Service
+  icon: "cottage"
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  status: true
+  background_color: '#FFFFFF'
+  background_image:
+  content: lorem-ipsum
+  button:
+    background_color: '#efefef'
+    border_width: '2'
+    border_style: 'solid'
+    border_color: '#000000'
+    border_radius: '4'
+    color: '#000000'
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:
+  status: 
+    label: Active Section
+    type: toggle
+  button.background_color:
+    label: Background Color Button
+    type: color
+  button.border_color:
+    label: Border Color Button
+    type: color
+  button.color:
+    label: Color text
+    type: color
+  content: 
+    label: Content Section
+    type: markdown
+  button.border_width: 
+    label: Border Width
+    type: number
+  button.border_radius: 
+    label: Border Width
+    type: number
+  button.border_style:
+    label: Border Style
+    type: select
+    description:
+    options:
+      - solid
+      - dashed
+      - dotted
+      - double
+      - hidden

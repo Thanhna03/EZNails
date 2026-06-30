@@ -12,14 +12,22 @@ blueprint:
   status: true
   background_color: '#ffffff'
   background_image: 
-  title: Welcome to
   sub_title: Deluxe Nails & Spa
-  image: /images/aboutpage.jpeg
-  image_alt: Deluxe Nails & Spa Alt
+  map_title: Find us on the map
   title_form: Send us a message
+  address:
+    address_icon: /images/icon_location.png
+    title: Address
+  phone:
+    phone_icon: /images/icon_call.png
+    title: Tel
+  email:
+    email_icon: /images/icon_mail.png
+    title: Email
+  business_hours_title: Business Hours
   color_input_form: '#000000'
   button:
-    background_color: "#7BB303"
+    background_color: "#DB00C5"
     color: "#ffffff"
     border: 25
     text_button: Send Us
@@ -34,9 +42,6 @@ blueprint:
       is_show: true
       placeholder: Name
       width_fields: full
-  # If section need filter custom
-  extend:
-    image_deco: ''
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
@@ -52,6 +57,9 @@ _inputs:
   sub_title: 
     label: Sub Title Section
     type: markdown
+  map_title:
+    label: Map Title Section
+    type: markdown
   image: 
     label: Image Section
     type: image
@@ -60,10 +68,31 @@ _inputs:
     type: text
   title_form: 
     label: Title Form Section (The title is defined for every contact list.)
-    type: text
+    type: markdown
   color_input_form: 
     label: Color Input Text
     type: color
+  address.address_icon:
+    label: Address Icon
+    type: image
+  address.title:
+    label: Address Title
+    type: text
+  phone.phone_icon:
+    label: Phone Icon
+    type: image
+  phone.title:
+    label: Phone Title
+    type: text
+  email.email_icon:
+    label: Email Icon
+    type: image
+  email.title:
+    label: Email Title
+    type: text
+  business_hours_title:
+    label: Business Hours Title
+    type: text
   list_fields[*].fields:
     label: Type Fields
     type: select

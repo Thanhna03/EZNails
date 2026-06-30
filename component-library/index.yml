@@ -1,0 +1,209 @@
+paths:
+  collections: content
+  data: data
+  static: public
+  uploads: public/images
+collections_config:
+  data:
+    path: data/
+    disable_add: true
+    disable_add_folder: true
+  pages:
+    path: content
+    glob:
+      - content/*.yml
+    url: '/[slug]'
+    output: true
+    icon: wysiwyg
+    _enabled_editors:
+      - visual
+    schemas:
+      page:
+        name: New Page
+        path: schemas/page.yml
+
+  blog:
+    path: content/blog/
+    output: true
+    url: "/blog/[slug]"
+    _enabled_editors:
+      - content
+      - visual
+    schemas:
+      blog_post:
+        name: New Blog Post
+        path: schemas/post.yml
+        hide_extra_inputs: false
+        remove_extra_inputs: false
+
+
+_inputs:
+  _path:
+    type: text
+    label: Page path
+    description:
+  status:
+    type: toggle
+    label: Active Section
+  isReverse:
+    type: toggle
+    label: Reverse Section
+  layout_list:
+    label: Layout
+    type: select
+    description:
+    options:
+      - 1
+      - 2
+      - 3
+      - 4
+  layout:
+    label: Layout
+    type: select
+    description:
+    options:
+      - slides
+      - list 
+  title:
+    type: text
+    label: Page title
+    description:
+  icon:
+    type: image
+    label: Image
+  image:
+    type: image
+    label: Image
+  description:
+    type: markdown
+    label: Page description
+    description:
+  thumb_img.image:
+    type: image
+    label: Thumbnail image
+    description:
+  featuredImg.image:
+    type: image
+    label: Featured image
+    description:
+  seo.title:
+    type: text
+    label: Seo title
+    description:
+  seo.description:
+    type: text
+    label: Seo description
+    description:
+  seo.url:
+    type: text
+    label: Seo url
+    description:
+  seo.image:
+    type: image
+    label: Seo image
+    description:
+  seo.no_index:
+    type: checkbox
+    label: Seo no index
+    description:
+  seo.page_description:
+    label: Page Description
+    type: textarea
+    description: If empty, defaults to the description set in the Site SEO data file
+  seo.canonical_url:  
+    label: Canonical URL
+    type: text
+    description: If empty, defaults to the URL of the page
+  seo.featured_image:
+    label: Featured Image
+    type: image
+    description: If empty, defaults to the image set in the Site SEO data file
+  seo.author_twitter_handle:
+    label: Author Twitter Handle
+    type: text
+  seo.open_graph_type:
+    label: Open Graph Type
+    type: text
+  content_blocks:
+    label: Content blocks
+    description:
+  description_simple:
+    type: markdown
+    label: Description simple
+  desc:
+    type: markdown
+    label: Description
+  open_new_tab:
+    type: toggle
+    label: Toggle Open New Tab
+  is_show:
+    type: toggle
+    label: Show/Hide Button
+  item_prop:
+    type: text
+    label: Item prop (This field is used for SEO - Don't allow edits unless you know about SEO)
+  background_color:
+    type: color
+    label: Background color
+  background_image:
+    type: image
+    label: Image (If image does not exist,it will get background color)
+  items_per_page:
+    type: text
+    label: Number Of Posts Per Page
+    description: The number of posts per page must be greater than 1. If less than 1, the default will be 6
+  related_post:
+    type: toggle
+    label: Active Related Post
+    description: This option will show/hide related posts by tag
+  publish: 
+    label: Publish Blog
+    type: toggle
+  date: 
+    label: Publish Day
+    type: date
+  button.url:
+    label: Link of Button
+    type: text
+  button.text:
+    label: Title of Button
+    type: text
+  # For Section Hero - Home page
+  sub_description:
+    type: textarea
+    label: Description short of information
+  main_description:
+    type: textarea
+    label: Description main of information
+  # For Section Hero - Gallery page
+  sort:
+    label: Item Order
+    type: select
+    description:
+    options:
+      - Custom
+      - Default
+  created_at:
+    label: Publish Day
+    type: hidden
+  is_hot:
+    type: toggle
+    label: Item Hot
+  is_show_switch_price:
+    type: toggle
+    label: Show/Hide Switch Price
+  priority:
+    type: text
+    label: Priority of gallery item
+  is_reverse:
+    type: toggle
+    label: Reverse Section
+  time_start:
+    type: date
+    label: Time start 
+  time_end:
+    type: date
+    label: Time end 
+  text_color:
+    type: color
+    label: Text color

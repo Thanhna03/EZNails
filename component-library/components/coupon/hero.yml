@@ -1,0 +1,79 @@
+
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - content_blocks
+  label: Coupon Hero Section
+  description: Coupon Hero Section
+  icon: "cottage"
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  status: true
+  background_color: '#ffffff'
+  background_image: 
+  title: NEW PROMOTION
+  description: >-
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+    veniam, quis nostrud
+  list_item:
+    - image_alt: Coupons page 1
+      image: /images/coupon1.png
+      time_start: ~
+      time_end: ~
+      is_hot: true
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:
+  background_color:
+    type: color
+    label: Background color
+  background_image:
+    type: image
+    label: Image (If image does not exist,it will get background color)
+
+  title:
+    type: text
+    label: Title Section
+  sub_title:
+    type: text
+    label: Sub title Section
+
+  sub_description:
+    type: markdown_simple
+    label: Sub description Section
+  description:
+    type: markdown_simple
+    label: Description Section
+    
+  content:
+    type: markdown_simple
+    label: Content Section
+    
+  image:
+    type: image
+    label: Image Section
+  image_alt:
+    type: text
+    label: Image alt Section
+
+  list_item[*].title:
+    type: text
+    label: Title list item
+  list_item[*].description:
+    type: markdown_simple
+    label: Description list item
+  list_item[*].image:
+    type: image
+    label: Image list item
+  list_item[*].image_alt:
+    type: text
+    label: Image alt list item
+
+  extend.image_deco: 
+    label: Image Decoration Section
+    type: image

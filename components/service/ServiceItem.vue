@@ -38,19 +38,19 @@
               :alt="block.image_alt"
               :title="block.image_alt"
               itemprop="image"
-              class="aspect-[1/1] border-[3px] mb-4 border-anchor lg:w-full object-cover"
+              class="w-[250px] object-cover border-[3px] mb-4 border-radius rounded-full border-secondary"
             />
           </div>
           <div>
             <h3
-              class="mb-1 inline-block text-center text-2xl text-main font-semibold"
+              class="mb-1 inline-block text-center text-2xl text-secondary uppercase"
               itemprop="name"
             >
               {{ block.title }}
             </h3>
             <div
               v-if="block?.description_simple"
-              class="ckeditor-custom mb-2.5"
+              class="ckeditor-custom text-foreground mb-2.5"
               itemprop="description"
               v-html="block?.description_simple"
             />
@@ -76,7 +76,7 @@
               >
                 <span
                   v-if="item?.label"
-                  class="pr-1 inline-block font-semibold text-secondary"
+                  class="pr-1 inline-block font-semibold text-foreground"
                   >{{ item?.label }}</span
                 >
                 <span
@@ -85,26 +85,26 @@
                 ></span>
                 <span
                   v-if="item?.price"
-                  class="pl-1 inline-block font-semibold"
+                  class="pl-1 inline-block text-foreground"
                   >{{ getPrice(item?.price) }}</span
                 >
               </div>
               <div
                 v-if="item?.description_simple"
-                class="ckeditor-custom mb-4"
+                class="ckeditor-custom text-foreground mb-4"
                 v-html="item?.description_simple"
               ></div>
             </div>
             <div class="md:pl-[10px] pl-1">
               <div v-for="(item, index) in block?.second_cat" :key="index">
                 <h3
-                  class="inline-block text-center text-2xl text-main font-semibold"
+                  class="inline-block text-center text-2xl text-secondary font-semibold"
                 >
                   {{ item.title }}
                 </h3>
                 <div
                   v-if="item?.description_simple"
-                  class="ckeditor-custom mb-4"
+                  class="ckeditor-custom text-foreground mb-4"
                   v-html="item?.description_simple"
                 ></div>
                 <div
@@ -120,7 +120,7 @@
                   >
                     <span
                       v-if="subitem?.label"
-                      class="pr-1 inline-block font-semibold text-secondary"
+                      class="pr-1 inline-block font-semibold text-foreground"
                       >{{ subitem?.label }}</span
                     >
                     <span
@@ -129,7 +129,7 @@
                     ></span>
                     <span
                       v-if="subitem?.price"
-                      class="pl-1 inline-block font-semibold"
+                      class="pl-1 inline-block font-semibold text-foreground"
                       >{{ getPrice(subitem?.price) }}</span
                     >
                   </div>
@@ -147,7 +147,7 @@
                         :key="index"
                       >
                         <h3
-                          class="inline-block text-center text-2xl text-main font-semibold"
+                          class="inline-block text-center text-2xl text-secondary font-semibold"
                         >
                           {{ subitem.title }}
                         </h3>
@@ -169,7 +169,7 @@
                           >
                             <span
                               v-if="subitemMenu?.label"
-                              class="pr-1 inline-block font-semibold text-secondary"
+                              class="pr-1 inline-block text-foreground"
                               >{{ subitemMenu?.label }}</span
                             >
                             <span
@@ -178,7 +178,7 @@
                             ></span>
                             <span
                               v-if="subitemMenu?.price"
-                              class="pl-1 inline-block font-semibold"
+                              class="pl-1 inline-block  text-foreground"
                               >{{ getPrice(subitemMenu?.price) }}</span
                             >
                           </div>

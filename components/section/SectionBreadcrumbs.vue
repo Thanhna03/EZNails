@@ -6,12 +6,12 @@
       <div
         class="bg-breadcrumb"
         :style="{
-          backgroundImage: `linear-gradient(90deg, rgba(30, 33, 49, 0.9) 0%, rgba(38, 46, 80, 0) 100%), url('${props.block.background_image}')`,
+          backgroundImage: `linear-gradient(var(--color-primary), var(--color-primary)), url('${props.block.background_image}')`,
         }"
       />
       <div class="container">
         <div
-          class="title-breadcrumb text-center text-white ckeditor-custom"
+          class="title-nav text-center text-white ckeditor-custom"
           v-html="block.title"
         />
       </div>
@@ -25,7 +25,7 @@ interface Props {
 }
 const props = defineProps<Props>();
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .section__breadcrumb {
   position: relative;
   z-index: 5;
@@ -39,6 +39,14 @@ const props = defineProps<Props>();
     width: 100%;
     height: 100%;
   }
+}
+
+.title-nav {
+  font-size: 32px;
+  font-family: "Libre Baskerville", serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #eeeded;
 }
 
 @media (max-width: 768px) {

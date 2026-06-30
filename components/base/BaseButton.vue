@@ -27,8 +27,8 @@ const props = withDefaults(defineProps<Props>(), {
 
 <style lang="scss" scoped>
 .btn__hover {
-  background-color: var(--color-primary);
-  color: var(--color-primary-foreground);
+  background-color: var(--color-primary-foreground);
+  color: var(--color-secondary);
 
   &:hover {
     opacity: 0.8;

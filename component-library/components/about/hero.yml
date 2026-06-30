@@ -1,0 +1,45 @@
+
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - content_blocks
+  label: About Hero Section
+  description: About Hero Section
+  icon: "cottage"
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  status: true
+  background_color: '#ffffff'
+  background_image: 
+  title: Welcome to
+  sub_title: Deluxe Nails & Spa
+  image: /images/aboutpage.jpeg
+  image_alt: Deluxe Nails & Spa Alt
+  description: >-
+    Dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+  extend:
+    image_decoration: /images/about-deco.png
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:
+  title: 
+    label: Title Section
+    type: markdown
+  sub_title: 
+    label: Sub Title Section
+    type: markdown
+  image: 
+    label: Image Section
+    type: image
+  image_alt: 
+    label: Image Alt Section
+    type: text
+  description: 
+    label: Description Section
+    type: markdown
+  extend.image_decoration: 
+    label: Image Decoration Section
+    type: image

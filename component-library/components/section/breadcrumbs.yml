@@ -1,0 +1,35 @@
+
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - content_blocks
+  label: Breadcrumbs Section
+  description: Breadcrumbs Section
+  icon: "cottage"
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  status: true
+  title: About us
+  background_image: /images/bg-breadcrumb.png
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:
+  status:
+    type: toggle
+    label: Active Section
+  title: 
+    label: Title Section
+    type: markdown
+  background_image:
+    label: Background Image
+    type: image
+  extend.contact.is_show:
+    label: Show/Hide Section (This setting for the bellow information section)
+    type: toggle
+  extend.contact.background_color:
+    label: Background Color Section (This setting for the bellow information section)
+    type: color

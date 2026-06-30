@@ -1,0 +1,106 @@
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - content_blocks
+  label: Blog Detail
+  description: Blog Detail
+  icon: "cottage"
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  publish: true
+  seo:
+    page_description:
+    canonical_url:
+    author_twitter_handle:
+    open_graph_type: article
+    no_index: false
+  date: 2024-09-30 14:55:55
+  title: Title test
+  author:
+    url: /
+    text: Author
+  desc: >-
+    this is description.
+  content: >-
+    <p>Simplifying check-ins and elevating security should be a top priority for any Airbnb host. That's where smart locks come in. These WiFi and/or Bluetooth-enabled locks allow seamless remote access for guests using virtual codes, reducing the hassle of physical keys. Because choosing the right smart lock is crucial for ensuring both convenience and safety, we've narrowed down the best options to help your decision as a savvy host.</p>
+  category: 
+    - text: 'category'
+      open_new_tab: false
+  tags: 
+    - text: 'tags'
+      open_new_tab: false
+  thumb_img:
+    image: 
+    image_alt: Image alt
+  content_blocks: []
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:
+  publish: 
+    label: Publish Blog
+    type: toggle
+  title: 
+    label: Title
+    type: text
+  author.url:
+    label: Url Author
+    type: text
+  author.text:
+    label: Author
+    type: text
+  desc:
+    label: Description Simple
+    type: markdown_simple
+  content:
+    label: Content
+    type: blog
+  category[*].text:
+    label: Name Category
+    type: text
+  tags[*].text:
+    label: Name Tag
+    type: text
+  tags[*].title:
+    label: Name Tag
+    type: text
+  tags[*].tag:
+    label: Tag
+    type: text
+  thumb_img.image:
+    label: Thumbnail Image
+    type: image
+  thumb_img.image_alt:
+    label: Thumbnail Alt Image
+    type: text
+  featuredImg.image:
+    label: Featured Image
+    type: image
+  featuredImg.image_alt:
+    label: Featured Alt Image
+    type: text
+  seo.page_description:
+    label: Page Description
+    type: textarea
+  seo.canonical_url:  
+    label: Canonical URL
+    type: text
+  seo.featured_image:
+    label: Featured Image
+    type: image
+  seo.featured_image_alt:
+    label: Featured Image Alt
+    type: text
+  seo.author_twitter_handle:
+    label: Author Twitter Handle
+    type: text
+  seo.open_graph_type:
+    label: Open Graph Type
+    type: text
+  seo.no_index:
+    label: No Index
+    type: text
+    

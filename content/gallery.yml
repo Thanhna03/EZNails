@@ -17,11 +17,11 @@ content_blocks:
 
   - _block_name: gallery/hero
     status: true
-    background_color: '#ffffff'
+    background_color: '#191919'
     background_image:
     sort: 'Default'
     gallery:
-      - label: Nails Design
+      - label: Signature Nail Art Designs 
         is_hot: true
         item: 
           - image: /images/galleryitem1.jpeg

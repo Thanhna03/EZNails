@@ -18,30 +18,30 @@ content_blocks:
   # Service item section default if Menu page
   - _block_name: service/item
     status: true
-    background_color: '#FFFFFF'
+    background_color: '#191919'
     background_image:
     is_reverse: false
     is_hot: true
-    is_show_switch_price: true
+    is_show_switch_price: false
     image: /images/service4.jpeg
     image_alt: Alt Img
     title: Manicure
     description_simple: This is this description
     list_service:
       - label: Full Set
-        price: $50
+        price: ' '
         description_simple: This is this description
       - label: Full Set - Pink & White with Ombre
-        price: $65
+        price: ' '
         description_simple: This is this description
       - label: Fill-in, Pink & White
-        price: $45
+        price: ' '
         description_simple: This is this description
       - label: Fill-in, Pink only
-        price: $30
+        price: ' '
         description_simple:
       - label: Fill-in, Pink only
-        price: $30
+        price: ' '
         description_simple:
     second_cat:
       - title: REFILL
@@ -71,7 +71,7 @@ content_blocks:
                 description_simple:
   - _block_name: service/item
     status: true
-    background_color: '#FFFFFF'
+    background_color: '#191919'
     background_image:
     is_reverse: true
     is_hot: true
@@ -124,7 +124,7 @@ content_blocks:
                 description_simple:
   - _block_name: service/item
     status: true
-    background_color: '#FFFFFF'
+    background_color: '#191919'
     background_image:
     is_reverse: false
     is_hot: true
@@ -177,7 +177,7 @@ content_blocks:
                 description_simple:
   - _block_name: service/item
     status: true
-    background_color: '#FFFFFF'
+    background_color: '#191919'
     background_image:
     is_reverse: true
     is_hot: true
@@ -231,7 +231,7 @@ content_blocks:
 
   - _block_name: service/switchprice
     status: false
-    background_color: '#ffffff'
+    background_color: '#191919'
     background_image: ''
     content: lorem-ipsum
     button:

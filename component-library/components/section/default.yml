@@ -1,0 +1,94 @@
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - content_blocks
+  label: Name Section
+  description: Name Section
+  icon: "cottage"
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  status: true
+  background_color: "#FFFFFF"
+  background_image: ""
+  title: Title section default
+  sub_title: Sub title section default
+  sub_description: Sub description section default
+  description: Description section default
+  content: Content section default
+  # If section has image
+  image: /images/aboutpage.jpeg
+  image_alt: Image alt section default
+  # If section has button
+  button:
+    is_show: true
+    url: /coupons
+    text: View more
+    open_new_tab: false
+  # For grid layout list item
+  layout_list: 4
+  # For gallery layout list item
+  sort: "Default"
+  # If section has list item
+  list_item:
+    - title: Title list item
+      description: Description list item
+      image: /images/aboutpage.jpeg
+      image_alt: Image alt list item
+  # If section need filter custom
+  extend:
+    image_deco: ''
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:
+  background_color:
+    type: color
+    label: Background color
+  background_image:
+    type: image
+    label: Image (If image does not exist,it will get background color)
+
+  title:
+    type: text
+    label: Title Section
+  sub_title:
+    type: text
+    label: Sub title Section
+
+  sub_description:
+    type: markdown_simple
+    label: Sub description Section
+  description:
+    type: markdown_simple
+    label: Description Section
+    
+  content:
+    type: markdown_simple
+    label: Content Section
+    
+  image:
+    type: image
+    label: Image Section
+  image_alt:
+    type: text
+    label: Image alt Section
+
+  list_item[*].title:
+    type: text
+    label: Title list item
+  list_item[*].description:
+    type: markdown_simple
+    label: Description list item
+  list_item[*].image:
+    type: image
+    label: Image list item
+  list_item[*].image_alt:
+    type: text
+    label: Image alt list item
+
+  extend.image_deco: 
+    label: Image Decoration Section
+    type: image
