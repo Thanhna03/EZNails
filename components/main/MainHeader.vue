@@ -227,12 +227,14 @@
           />
         </div>
       </div>
+
       <div class="relative w-full">
         <!-- Background -->
         <img
           src="/images/header-bottom-shape2.png"
           alt=""
-          class="absolute inset-10 top-0 left-[90px] aspect-[3/2] object-cover -z-10"
+          @click="navCollapsed = !navCollapsed"
+          class="absolute top-0 left-[132px] w-[70px] aspect-[3/2] object-cover z-10 cursor-pointerr"
         />
 
         <!-- Optional overlay -->
@@ -242,33 +244,9 @@
         <img
           src="/images/header-bottom-shape.png"
           alt=""
-          class="relative w-full block"
+          class="header-shape relative w-full block"
         />
       </div>
-
-      <!-- <div class="relative flex-shrink-0">
-        <img
-          src="/images/header-bottom-shape.png"
-          alt=""
-          class="w-full block"
-        />
-        <div class="absolute inset-x-0 top-3 flex justify-center">
-          <button
-            @click="navCollapsed = !navCollapsed"
-            class="w-10 h-10 rounded-full bg-gray-500/70 hover:bg-gray-400/90 flex items-center justify-center transition-colors shadow-lg"
-          >
-            <UIcon
-              :name="
-                navCollapsed
-                  ? 'i-heroicons-chevron-down'
-                  : 'i-heroicons-chevron-up'
-              "
-              class="text-white"
-            />
-          </button>
-        </div>
-      </div> -->
-
     </div>
   </div>
 </template>
@@ -443,5 +421,6 @@ watch(
       transform: translateY(50%) rotate(-45deg);
     }
   }
+
 }
 </style>

@@ -13,7 +13,7 @@
       </div>
     </div> -->
     <div class="relative w-full">
-      <div class="absolute top-0 left-10 w-fit z-50">
+      <div class="absolute top-0 left-10 w-[333px] z-50">
         <MainHeader />
       </div>
       <div class="relative w-full">
